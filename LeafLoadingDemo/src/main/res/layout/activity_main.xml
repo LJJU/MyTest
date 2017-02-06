@@ -14,9 +14,10 @@
         android:layout_height="61dp" />
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
         android:text="reset" />
+
 </LinearLayout>

@@ -538,4 +538,30 @@ public class LeafLoading extends View {
     public long getmIconRotateTime() {
         return mIconRotateTime;
     }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+
+        //释放内存
+        recycleBitmap(mIconBitmap);
+        recycleBitmap(mLeafBitmap);
+        recycleBitmap(mOuterBitmap);
+    }
+
+    /**
+     * 释放Bitmap内存
+     *
+     * @param bitmap
+     */
+    private void recycleBitmap(Bitmap bitmap) {
+        // 先判断是否已经回收
+        if (bitmap != null && !bitmap.isRecycled()) {
+            // 回收并且置为null
+            bitmap.recycle();
+            bitmap = null;
+        }
+        System.gc();
+    }
+
 }

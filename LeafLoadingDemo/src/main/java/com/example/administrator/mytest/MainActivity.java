@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         mLeafLoading = (LeafLoading) findViewById(R.id.leaf_loading);
         mHandler.sendEmptyMessageDelayed(0, 1000);
 
-        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mProgress = 0;
