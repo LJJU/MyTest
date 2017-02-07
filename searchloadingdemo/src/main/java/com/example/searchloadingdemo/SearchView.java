@@ -239,6 +239,13 @@ public class SearchView extends View {
         //移动画布到View中点
         canvas.translate(mWidth / 2, mHeight / 2);
 
+        //防止动画切换时出现的闪烁
+        if (mAnimatorValue == 0) {
+            mAnimatorValue = 0.001f;
+        } else if (mAnimatorValue == 1) {
+            mAnimatorValue = 0.999f;
+        }
+
         switch (mState) {
             default: {
             }
