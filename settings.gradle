@@ -1,1 +1,1 @@
-include ':LeafLoadingDemo', ':SearchLoadingDemo'
+include ':LeafLoadingDemo', ':SearchLoadingDemo', ':SvgAnimDemo'

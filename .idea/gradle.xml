@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/LeafLoadingDemo" />
             <option value="$PROJECT_DIR$/SearchLoadingDemo" />
+            <option value="$PROJECT_DIR$/SvgAnimDemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
