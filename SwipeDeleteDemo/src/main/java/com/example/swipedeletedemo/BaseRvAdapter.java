@@ -1,10 +1,10 @@
 package com.example.swipedeletedemo;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,11 +14,14 @@ import java.util.List;
 
 public abstract class BaseRvAdapter<T> extends RecyclerView.Adapter<BaseRvAdapter.MYViewHolder> {
 
+    private Context mContext;
+
     //数据源
     private List<T> mData;
 
-    public BaseRvAdapter(List<T> list) {
+    public BaseRvAdapter(Context context, List<T> list) {
         mData = list;
+        mContext = context.getApplicationContext();
     }
 
     @Override
@@ -32,16 +35,46 @@ public abstract class BaseRvAdapter<T> extends RecyclerView.Adapter<BaseRvAdapte
     @Override
     public void onBindViewHolder(MYViewHolder holder, int position) {
         //数据绑定
-        bindData(holder, position, mData);
+        bindData(holder, position);
     }
 
     /**
      * 绑定数据
-     * @param holder MYViewHolder
+     *
+     * @param holder   MYViewHolder
      * @param position position
-     * @param data data
      */
-    public abstract void bindData(MYViewHolder holder, int position, List<T> data);
+    public abstract void bindData(MYViewHolder holder, int position);
+
+    /**
+     * 获取数据源
+     *
+     * @return
+     */
+    public List<T> getData() {
+        return mData;
+    }
+
+    /**
+     * 获取数据源指定项
+     *
+     * @return
+     */
+    public T getData(int position) {
+        if (position >= 0 && position < mData.size()) {
+            return mData.get(position);
+        }
+        return null;
+    }
+
+    /**
+     * 弹出Toast
+     *
+     * @param msg
+     */
+    public void showToast(String msg) {
+        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+    }
 
     public static class MYViewHolder extends RecyclerView.ViewHolder {
 

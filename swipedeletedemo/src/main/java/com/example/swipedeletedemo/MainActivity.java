@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        BaseRvAdapter adapter = new RvAdapter(mdata);
+        BaseRvAdapter adapter = new RvAdapter(this, mdata);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
     }

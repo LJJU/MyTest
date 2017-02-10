@@ -7,6 +7,7 @@
     android:paddingBottom="1dp">
 
     <LinearLayout
+        android:id="@+id/item_contentView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorAccent"
