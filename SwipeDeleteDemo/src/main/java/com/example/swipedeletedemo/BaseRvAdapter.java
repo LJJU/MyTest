@@ -73,7 +73,7 @@ public abstract class BaseRvAdapter<T> extends RecyclerView.Adapter<BaseRvAdapte
      * @param msg
      */
     public void showToast(String msg) {
-        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
+        Tool.show(mContext, msg);
     }
 
     public static class MYViewHolder extends RecyclerView.ViewHolder {
