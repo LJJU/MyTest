@@ -6,3 +6,6 @@
     
 3、SvgAnimDemo
     铁塔融云特效
+
+4、swipedeletedemo
+    滑动删除控件
